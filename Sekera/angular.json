@@ -24,7 +24,7 @@
             ],
             "styles": [
               "../sekera/node_modules/bootstrap/dist/css/bootstrap.css"
-                          ],
+            ],
             "scripts": []
           },
           "configurations": {
