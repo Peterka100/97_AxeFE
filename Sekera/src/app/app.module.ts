@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 
+
 import { AppComponent } from './app.component';
 import {ServerComponent} from "./server/server.component";
 import { ServersComponent } from './servers/servers.component';
@@ -12,6 +13,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
