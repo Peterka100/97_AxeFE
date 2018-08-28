@@ -19,6 +19,7 @@ export class AppComponent {
     this.found = false;
   }
 
+  /*
    getProfile(){
     console.log(this.name);
     this.httpClient.get(`http://127.0.0.1:5000/cards/3/${this.name}`)
@@ -48,9 +49,9 @@ export class AppComponent {
              console.log(data);
 
            }
-         }),
-   }
-
+         })
+    }
+*/
 
 
  }
