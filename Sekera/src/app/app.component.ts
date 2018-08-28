@@ -8,8 +8,6 @@
 })
 export class AppComponent {
  name: string = '';
- iron: number;
- wood: number;
  found: boolean;
 
    constructor(private httpClient: HttpClient){}
@@ -18,6 +16,18 @@ export class AppComponent {
     this.name = event.target.value;
     this.found = false;
   }
+
+
+
+
+
+
+
+
+
+
+
+
 
   /*
    getProfile(){
