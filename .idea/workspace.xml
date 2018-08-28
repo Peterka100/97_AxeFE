@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c7ab7bcd-a57c-4f69-8e51-49c21304a196" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Sekera/src/app/app-routing.module.ts" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/Sekera/src/app/app.module.ts" afterPath="$PROJECT_DIR$/Sekera/src/app/app.module.ts" />
+      <change beforePath="$PROJECT_DIR$/Sekera/src/app/app.component.html" afterPath="$PROJECT_DIR$/Sekera/src/app/app.component.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,7 +26,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app-routing.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sekera/src/app/app-routing.module.ts">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -52,11 +50,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sekera/src/app/app.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -105,9 +103,9 @@
         <option value="$PROJECT_DIR$/Sekera/src/app/header/header.component.html" />
         <option value="$PROJECT_DIR$/Sekera/src/app/footer/footer.component.html" />
         <option value="$PROJECT_DIR$/Sekera/src/app/app.component.ts" />
-        <option value="$PROJECT_DIR$/Sekera/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/Sekera/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/Sekera/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/Sekera/src/app/app.component.html" />
       </list>
     </option>
   </component>
@@ -286,12 +284,12 @@
       <option name="presentableId" value="Default" />
       <updated>1534941111143</updated>
       <workItem from="1534941114256" duration="14289000" />
-      <workItem from="1535358433508" duration="34804000" />
+      <workItem from="1535358433508" duration="35403000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51564000" />
+    <option name="totallyTimeSpent" value="52163000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1035" extended-state="6" />
@@ -584,14 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sekera/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Sekera/src/app/app-routing.module.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -625,6 +615,14 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sekera/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
