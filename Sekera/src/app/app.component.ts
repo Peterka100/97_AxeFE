@@ -12,10 +12,7 @@ export class AppComponent {
 
    constructor(private httpClient: HttpClient){}
 
-  onNameKeyUp(event:any) {
-    this.name = event.target.value;
-    this.found = false;
-  }
+
 
 
 
@@ -30,6 +27,12 @@ export class AppComponent {
 
 
   /*
+
+  onNameKeyUp(event:any) {
+    this.name = event.target.value;
+    this.found = false;
+  }
+
    getProfile(){
     console.log(this.name);
     this.httpClient.get(`http://127.0.0.1:5000/cards/3/${this.name}`)

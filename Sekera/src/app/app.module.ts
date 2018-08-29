@@ -14,6 +14,10 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { LoginButtonComponent } from './login-button/login-button.component';
+import { LoggedComponent } from './logged/logged.component';
+import { HeaderUserComponent } from './header-user/header-user.component';
+
 
 
 @NgModule({
@@ -25,7 +29,10 @@ import { AppRoutingModule } from './/app-routing.module';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    LoginButtonComponent,
+    LoggedComponent,
+    HeaderUserComponent
   ],
   imports: [
     BrowserModule,
