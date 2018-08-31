@@ -3,17 +3,20 @@ import { HttpClient} from "@angular/common/http";
 import {Router} from "@angular/router";
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   userCreated = false;
   nickname: string;
   user_id: number;
+  token: any;
 
   constructor(private httpClient: HttpClient, private router: Router) {
   }
@@ -60,18 +63,37 @@ export class LoginComponent implements OnInit {
           console.log(data);
 
           this.user_id = data.user_id;
-          console.log(this.user_id);
+          this.token = data.token;
+
 
           if (this.user_id = null) {
             console.log('Uzivatel neexistuje');
           } else {
-              this.loginClick();
+
+              this.loginClick(data);
             }
+
+          this.setSession(data);
+
         })
 
   }
 
-  loginClick() {
+
+  loginClick(data) {
     this.router.navigate(['/logged']);
+
   }
+
+
+  private setSession(data) {
+    localStorage.setItem('token', data.token);
+    console.log("token je: " + data.token);
+  }
+
+
+
 }
+
+
+

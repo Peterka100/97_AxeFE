@@ -6,25 +6,24 @@ import {HttpClientModule} from "@angular/common/http";
 
 
 import { AppComponent } from './app.component';
-import {ServerComponent} from "./server/server.component";
-import { ServersComponent } from './servers/servers.component';
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { LoggedComponent } from './logged/logged.component';
 import { HeaderUserComponent } from './header-user/header-user.component';
+import { ResourcesComponent } from './resources/resources.component';
+
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerComponent,
-    ServersComponent,
     CardComponent,
     HeaderComponent,
     FooterComponent,
@@ -32,7 +31,9 @@ import { HeaderUserComponent } from './header-user/header-user.component';
     HomeComponent,
     LoginButtonComponent,
     LoggedComponent,
-    HeaderUserComponent
+    HeaderUserComponent,
+    ResourcesComponent,
+
   ],
   imports: [
     BrowserModule,
