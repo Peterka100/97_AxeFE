@@ -32,7 +32,7 @@ import { ResourcesComponent } from './resources/resources.component';
     LoginButtonComponent,
     LoggedComponent,
     HeaderUserComponent,
-    ResourcesComponent,
+    ResourcesComponent
 
   ],
   imports: [

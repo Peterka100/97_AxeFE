@@ -8,11 +8,16 @@ import { Router } from '@angular/router';
 })
 export class LoginButtonComponent implements OnInit {
   user_id: number;
+  loggeddUser: boolean;
 
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    const idToken = localStorage.getItem("token");
+    if(idToken){
+      this.loggeddUser = true;
+    }
   }
 
   loginClick(){

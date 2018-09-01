@@ -88,7 +88,8 @@ export class LoginComponent implements OnInit {
 
   private setSession(data) {
     localStorage.setItem('token', data.token);
-    console.log("token je: " + data.token);
+    localStorage.setItem('user_id', data.user_id);
+
   }
 
 

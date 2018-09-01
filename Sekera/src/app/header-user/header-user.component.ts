@@ -16,15 +16,12 @@ export class HeaderUserComponent implements OnInit {
   ngOnInit() {
   }
 
+  /*
   logoutClick() {
     localStorage.removeItem("token");
     this.router.navigate(['/home']);
   }
+  */
 
-getUserResource() {
-  this.httpClient.post(`http://127.0.0.1:5000/users/resources/${this.user_id}`, {
-
-  })
-}
 
 }

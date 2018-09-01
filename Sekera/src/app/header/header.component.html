@@ -1,4 +1,4 @@
-<nav class="container navbar navbar-expand-lg navbar-light bg-light" style="margin-bottom: 30px">
+<nav class="container navbar navbar-expand-lg navbar-light bg-light" >
 
   <a class="navbar-brand"> G A M E </a>
 
@@ -9,8 +9,14 @@
       </li>
     </ul>
 
+    <button *ngIf="loggeddUser; else loginbutton" class="btn btn-outline-danger my-2 my-sm-0" (click)="logoutClick()">Logout</button>
+
+    <ng-template #loginbutton>
+      <button  class="btn btn-outline-success my-2 my-sm-0" (click)="loginClick()">Login</button>
+    </ng-template>
+<!--
     <app-login-button *ngIf="router.url !== '/logged'"></app-login-button>
     <app-header-user *ngIf="router.url === '/logged'"> </app-header-user>
-
+-->
   </div>
 </nav>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -9,12 +11,30 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   logged: boolean;
+  loggeddUser: boolean;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+
+      const idToken = localStorage.getItem("token");
+      if (idToken) {
+        this.loggeddUser = true;
+      }
+
+
+
+
   }
 
+  loginClick(){
+      this.router.navigate(['/login']);
+    }
 
+  logoutClick(){
+    this.router.navigate(['/home']);
+    localStorage.removeItem("token");
+
+  }
 
 }
