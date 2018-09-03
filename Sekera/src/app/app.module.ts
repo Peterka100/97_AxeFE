@@ -14,7 +14,6 @@ import { HomeComponent } from './home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginButtonComponent } from './login-button/login-button.component';
 import { LoggedComponent } from './logged/logged.component';
-import { HeaderUserComponent } from './header-user/header-user.component';
 import { ResourcesComponent } from './resources/resources.component';
 
 
@@ -31,7 +30,6 @@ import { ResourcesComponent } from './resources/resources.component';
     HomeComponent,
     LoginButtonComponent,
     LoggedComponent,
-    HeaderUserComponent,
     ResourcesComponent
 
   ],
