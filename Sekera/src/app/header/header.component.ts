@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginComponent} from "../login/login.component";
+
 
 
 @Component({
@@ -14,37 +14,29 @@ export class HeaderComponent implements OnInit {
   loggeddUser: boolean;
 
 
-  constructor(private router: Router, private Auth: LoginComponent) {}
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
-      this.getToken();
-
-      const idToken = localStorage.getItem("token");
-      if(idToken) {
-        this.loggeddUser = true;
-      } else {
-        this.loggeddUser = false;
-      }
   }
 
-  loginClick(){
-      this.router.navigate(['/login']);
+  /*
+        if(idToken) {
+          this.loggeddUser = true;
+        } else {
+          this.loggeddUser = false;
+        }
     }
+  */
 
-  logoutClick(){
+  loginClick() {
+    this.router.navigate(['/login']);
+  }
+
+  logoutClick() {
     this.router.navigate(['/home']);
-    localStorage.removeItem("token");
-    this.ngOnInit();
 
   }
-
-  getToken(){
-    this.Auth.postLogin()
-      .subscribe(
-        (data: any) => {
-          console.log("Login " + data);
-      })
-  }
-
 
 }
+

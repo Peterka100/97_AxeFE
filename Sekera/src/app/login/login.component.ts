@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Router } from "@angular/router";
-import { Injectable } from "@angular/core";
+
+import {AuthService} from "../auth.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -10,21 +10,82 @@ import { Injectable } from "@angular/core";
   styleUrls: ['./login.component.css'],
 })
 
-@Injectable()
 export class LoginComponent implements OnInit {
-  username: string = '';
-  password: string = '';
-  userCreated = false;
-  nickname: string;
-  user_id: number;
 
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private Auth: AuthService, private router: Router) {
   }
 
   ngOnInit() {
   }
 
+  loginUser(event) {
+    event.preventDefault()
+    const target = event.target
+    const username = target.querySelector('#username').value
+    const password = target.querySelector('#password').value
+
+    this.Auth.getUserDetails(username, password)
+
+
+    this.router.navigate(['/logged']);
+
+
+    }
+
+  }
+
+
+
+
+
+
+
+
+/*
+import { Component, OnInit } from '@angular/core';
+// import { HttpClient } from "@angular/common/http";
+// import { Router } from "@angular/router";
+import {AuthService} from "../auth.service";
+
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+})
+
+export class LoginComponent implements OnInit {
+  //username: string = '';
+  // password: string = '';
+  // userCreated = false;
+  // nickname: string;
+  // user_id: number;
+
+//constructor(private httpClient: HttpClient, private router: Router, private Auth: AuthService)
+  constructor(private Auth: AuthService) {
+  }
+
+  ngOnInit() {
+  }
+
+  //--------------------------------------------------------------------------------------------
+
+  loginUser(event) {
+    event.preventDefault()
+    const target = event.target
+    const username = target.querySelector('#username').value
+    const password = target.querySelector('#password').value
+
+    this.Auth.getUserDetails(username, password)
+    console.log(username, password);
+  }
+}
+
+  //--------------------------------------------------------------------------------------------
+
+
+/*
   onUsernameKeyUp(event: any) {
     this.username = event.target.value;
   }
@@ -54,12 +115,13 @@ export class LoginComponent implements OnInit {
 
 
   postLogin() {
-   return this.httpClient.post(`http://localhost:5000/auth/login`, {
+    return this.httpClient.post(`http://localhost:5000/auth/login`, {
       "username": this.username,
       "password": this.password
     })
 
   }
+}
 
 
 
@@ -101,3 +163,4 @@ export class LoginComponent implements OnInit {
   }
 
 */
+
