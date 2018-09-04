@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http";
 
 
-
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { HeaderComponent } from './header/header.component';
@@ -19,19 +18,17 @@ import { ResourcesComponent } from './resources/resources.component';
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
     HomeComponent,
     LoginButtonComponent,
     LoggedComponent,
+    LoginComponent,
     ResourcesComponent
-
   ],
   imports: [
     BrowserModule,
@@ -39,7 +36,7 @@ import { ResourcesComponent } from './resources/resources.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

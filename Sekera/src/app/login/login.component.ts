@@ -1,23 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient} from "@angular/common/http";
-import {Router} from "@angular/router";
-
-import { HeaderComponent } from "../header/header.component"
+import { HttpClient } from "@angular/common/http";
+import { Router } from "@angular/router";
+import { Injectable } from "@angular/core";
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 
+@Injectable()
 export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   userCreated = false;
   nickname: string;
   user_id: number;
-  token: any;
+
 
   constructor(private httpClient: HttpClient, private router: Router) {
   }
@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
 
   onUsernameKeyUp(event: any) {
     this.username = event.target.value;
-    console.log(this.username)
   }
 
   onPasswordKeyUp(event: any) {
@@ -55,47 +54,50 @@ export class LoginComponent implements OnInit {
 
 
   postLogin() {
-    this.httpClient.post(`http://localhost:5000/auth/login`, {
+   return this.httpClient.post(`http://localhost:5000/auth/login`, {
       "username": this.username,
       "password": this.password
     })
+
+  }
+
+
+
+      /*
       .subscribe(
         (data: any) => {
           console.log(data);
 
-          this.user_id = data.user_id;
-          this.token = data.token;
+                    this.user_id = data.user_id;
+                    this.token = data.token;
 
 
-          if (this.user_id = null) {
-            console.log('Uzivatel neexistuje');
-          } else {
+                    if (this.user_id = null) {
+                      console.log('Uzivatel neexistuje');
+                    } else {
 
-              this.loginClick(data);
+                      this.loginClick(data);
+                    }
+
+                    this.setSession(data);
+
+                  })
+
             }
 
-          this.setSession(data);
 
-        })
+            loginClick(data) {
+              this.router.navigate(['/logged']);
+
+            }
+
+            private setSession(data) {
+              localStorage.setItem('token', data.token);
+              localStorage.setItem('user_id', data.user_id);
+            }
+
+
 
   }
 
-
-  loginClick(data) {
-   this.router.navigate(['/logged']);
-
-  }
-
-
-  private setSession(data) {
-    localStorage.setItem('token', data.token);
-    localStorage.setItem('user_id', data.user_id);
-
-  }
-
-
-
-}
-
-
-
+*/
