@@ -26,10 +26,18 @@ export class LoginComponent implements OnInit {
     const password = target.querySelector('#password').value
 
     this.Auth.getUserDetails(username, password)
+      .subscribe((data) => {
+
+      console.log(data['token']); // data['token' je jenom jiný zápas data.token
 
 
-    this.router.navigate(['/logged']);
-
+      if(data['token']){
+        this.router.navigate(['/logged'])
+        this.Auth.setLoggedIn(true)
+      }else {
+        console.log('Nespravne credetial')
+      }
+    })
 
     }
 

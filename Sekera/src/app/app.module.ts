@@ -13,6 +13,8 @@ import {FooterComponent} from "./footer/footer.component";
 import {HeaderComponent} from "./header/header.component";
 import {LoggedComponent} from "./logged/logged.component";
 import {CardComponent} from "./card/card.component";
+import {AuthGuard} from "./auth.guard";
+
 
 
 @NgModule({
@@ -30,9 +32,10 @@ import {CardComponent} from "./card/card.component";
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

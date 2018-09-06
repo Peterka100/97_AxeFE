@@ -6,11 +6,12 @@
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
- name: string = '';
- found: boolean;
 
-   constructor(private httpClient: HttpClient){}
+export class AppComponent {
+
+   constructor(){
+
+   }
 
 
  }
