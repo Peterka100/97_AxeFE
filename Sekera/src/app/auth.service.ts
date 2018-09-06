@@ -5,21 +5,24 @@ interface myData {
   user_id: number;
   token: string;
   role: string;
+  message: string;
 }
 
 @Injectable()
 export class AuthService {
 
-  private loggedInStatus = false;
+
+  private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
 
   constructor(private httpClient: HttpClient) {}
 
   setLoggedIn (value: boolean){
     this.loggedInStatus = value;
+    localStorage.setItem('loggedIn', 'true')
   }
 
   get isLoggedIn(){
-    return this.loggedInStatus
+    return JSON.parse(localStorage.getItem('loggedIn')  || this.loggedInStatus.toString())
   }
 
   getUserDetails(username, password){

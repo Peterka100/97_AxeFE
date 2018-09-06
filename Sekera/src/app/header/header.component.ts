@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import {AuthService} from "../auth.service";
 
 
 @Component({
@@ -10,24 +10,18 @@ import { Router } from '@angular/router';
 })
 
 export class HeaderComponent implements OnInit {
-  logged: boolean;
-  loggeddUser: boolean;
+
+  HeaderLoggedIn: boolean;
 
 
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router, private Auth: AuthService) {}
 
   ngOnInit() {
+    this.HeaderLoggedIn = Boolean(localStorage.getItem('loggedIn'))
+    console.log(this.HeaderLoggedIn);
   }
 
-  /*
-        if(idToken) {
-          this.loggeddUser = true;
-        } else {
-          this.loggeddUser = false;
-        }
-    }
-  */
+
 
   loginClick() {
     this.router.navigate(['/login']);
@@ -35,8 +29,10 @@ export class HeaderComponent implements OnInit {
 
   logoutClick() {
     this.router.navigate(['/home']);
+    localStorage.removeItem('loggedIn')
+    localStorage.removeItem('token')
 
   }
 
-}
 
+}

@@ -7,26 +7,47 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
   styleUrls: ['./logged.component.css']
 })
 export class LoggedComponent implements OnInit {
+  cardsOfUser = [];
+  card_id;
+  card_level;
 
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
     const idToken = localStorage.getItem("token");
-    const user_id = localStorage.getItem("user_id");
+
 
     let headers = new HttpHeaders().set('Content-Type', 'application/json');
     headers = headers.set('authorization', 'Bearer ' + idToken);
 
 
     if(idToken) {
-      this.httpClient.get(`http://127.0.0.1:5000/users/${user_id}`, {
+      this.httpClient.get(`http://127.0.0.1:5000/users/${localStorage.getItem('user_id')}`, {
         headers: headers}
       )
         .subscribe(
           (data: any) => {
             console.log(data);
+
+            this.cardsOfUser = data.cardsOfUser;
+            console.log(data.cardsOfUser);
+
+            for(let i=0; i<this.cardsOfUser.length; i++) {
+              this.card_id  =  this.cardsOfUser[i].card_id.toString();
+              this.card_level = this.cardsOfUser[i].card_level.toString();
+              this.httpClient.get(`http://127.0.0.1:5000/cards/${this.card_id}/${this.card_level}`)
+                .subscribe((cards) => {
+                  console.log(cards);
+                })
+            }
           })
+
+
+
     }
+
+
+
 
   }
 }

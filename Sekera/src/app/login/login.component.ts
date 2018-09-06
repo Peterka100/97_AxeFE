@@ -4,6 +4,8 @@ import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
 
 
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -28,20 +30,23 @@ export class LoginComponent implements OnInit {
     this.Auth.getUserDetails(username, password)
       .subscribe((data) => {
 
-      console.log(data['token']); // data['token' je jenom jiný zápas data.token
+        console.log(data['token']); // data['token' je jenom jiný zápas data.token
 
 
-      if(data['token']){
-        this.router.navigate(['/logged'])
-        this.Auth.setLoggedIn(true)
-      }else {
-        console.log('Nespravne credetial')
-      }
-    })
+        if (data['token']) {
+          this.router.navigate(['/logged'])
+          this.Auth.setLoggedIn(true)
+          localStorage.setItem('token', data.token)
+          localStorage.setItem('user_id', data.user_id.toString())
 
-    }
+          } else {
+          console.log('Nespravne credetial')
+        }
+      })
 
   }
+}
+
 
 
 

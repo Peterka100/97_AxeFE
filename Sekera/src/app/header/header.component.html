@@ -9,7 +9,7 @@
       </li>
     </ul>
 
-    <button *ngIf="loggeddUser; else loginbutton" class="btn btn-outline-danger my-2 my-sm-0" (click)="logoutClick()">Logout</button>
+    <button *ngIf="HeaderLoggedIn; else loginbutton" class="btn btn-outline-danger my-2 my-sm-0" (click)="logoutClick()">Logout</button>
 
     <ng-template #loginbutton>
       <button  class="btn btn-outline-success my-2 my-sm-0" (click)="loginClick()">Login</button>
