@@ -9,11 +9,11 @@ import {HttpClient, HttpHeaders} from "@angular/common/http";
 export class LoggedComponent implements OnInit {
   cardsOfUser = [];
   resources = [];
+  resource;
   card_id;
   card_level;
-  next_iron;
-  next_wood;
-  parentMessage = "message from parent";
+
+
 
   constructor(private httpClient: HttpClient) { }
 
@@ -31,10 +31,11 @@ export class LoggedComponent implements OnInit {
       )
         .subscribe(
           (data: any) => {
-            console.log(data);
 
             this.cardsOfUser = data.cardsOfUser;
             console.log(this.cardsOfUser);
+
+
 
             for(let i=0; i<this.cardsOfUser.length; i++) {
               this.card_id  =  this.cardsOfUser[i].card_id.toString();
@@ -42,18 +43,18 @@ export class LoggedComponent implements OnInit {
               this.httpClient.get(`http://127.0.0.1:5000/cards/${this.card_id}/${this.card_level}`)
                 .subscribe((rss: any) => {
 
-                  this.resources = rss.card_details;
-                  console.log(this.resources);
-                     this.next_iron = rss.card_details.iron;
-                     this.next_wood = rss.card_details.wood;
-                    // console.log(this.next_iron);
-                    // console.log(this.next_wood);
+
+                  this.resource = rss.card_details;
+                  this.resources.push(this.resource)
+
                 })
             }
+
           })
+
     }
 
-    console.log(this.data);
+
 
   }
 

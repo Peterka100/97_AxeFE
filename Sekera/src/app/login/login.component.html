@@ -1,6 +1,6 @@
 
 <div class="container" id="loginpagecss">
-  <form  (submit)="loginUser($event)">
+  <form (submit)="loginUser($event)" >
 
     <div   class="form-group">
       <label for="username">Username</label>
@@ -14,8 +14,8 @@
 
     <p *ngIf="userCreated" class="text-primary">User <b>{{ username }}</b>  was created ! </p>
 
-    <button class="btn btn-primary" style="margin-right: 10px"> Login </button>
-    <button class="btn btn-primary" style="margin-right: 10px" > Register </button>
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px" > Login </button>
+    <button type="submit" class="btn btn-primary" style="margin-right: 10px" > Register </button>
 
   </form>
 

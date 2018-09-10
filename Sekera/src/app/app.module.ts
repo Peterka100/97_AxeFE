@@ -14,6 +14,7 @@ import {HeaderComponent} from "./header/header.component";
 import {LoggedComponent} from "./logged/logged.component";
 import {CardComponent} from "./card/card.component";
 import {AuthGuard} from "./auth.guard";
+import {ResourcesComponent} from "./resources/resources.component";
 
 
 
@@ -26,7 +27,8 @@ import {AuthGuard} from "./auth.guard";
     FooterComponent,
     HeaderComponent,
     LoggedComponent,
-    CardComponent
+    CardComponent,
+    ResourcesComponent
   ],
   imports: [
     BrowserModule,

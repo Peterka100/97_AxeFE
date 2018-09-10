@@ -2,6 +2,7 @@
 <app-header></app-header>
 
   <div class="container"  >
+    <app-resources></app-resources>
 
     <div style="margin-top: 50px">
       <router-outlet></router-outlet>
@@ -60,6 +61,12 @@
   </div>
 
 </div>
+
+ALTER TABLE player
+ADD meat int(30)NOT NULL;
+
+ALTER TABLE player
+ADD gold int(30) NOT NULL;
 
 -->
 

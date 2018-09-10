@@ -26,12 +26,22 @@ export class AuthService {
   }
 
   getUserDetails(username, password){
-    // [pst these details to API server and return user info, is info is correct
+    // post these details to API server and return user info, is info is correct
     return this.httpClient.post<myData>('http://localhost:5000/auth/login', {
       username,
       password
     })
   }
+/*
+  postSignup(username, password) {
+    // post these information to API server to register user
+    if (this.username != '' && this.password != '')
+       return this.httpClient.post(`http://127.0.0.1:5000/auth/signup/`, {
+        username,
+        password
+      })
 
+  }
+*/
 }
 

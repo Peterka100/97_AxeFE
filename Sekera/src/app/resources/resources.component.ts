@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// { LoginComponent} from "../login/login.component";
 import { HttpClient, HttpHeaders} from "@angular/common/http";
 
 
@@ -11,14 +10,20 @@ import { HttpClient, HttpHeaders} from "@angular/common/http";
 })
 
 export class ResourcesComponent implements OnInit {
-  showResources: boolean = false;
+  showResources: boolean;
   wood: number = this.wood;
   iron: number = this.iron;
+  meat: number = this.wood;
+  gold: number = this.iron;
 
   constructor(private httpClient: HttpClient) {
   }
 
   ngOnInit() {
+
+    this.showResources = Boolean(localStorage.getItem('loggedIn'))
+    console.log(this.showResources);
+
     const idToken = localStorage.getItem("token");
     const user_id = localStorage.getItem("user_id");
 
@@ -36,14 +41,10 @@ export class ResourcesComponent implements OnInit {
             this.iron = data.user_resources.iron;
             this.wood = data.user_resources.wood;
 
-            console.log(this.iron);
-            console.log(this.wood);
           })
         }
 
-    if(idToken) {
-     this.showResources = true;
-    }
+
   }
 
 
