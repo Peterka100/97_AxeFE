@@ -40,6 +40,8 @@ export class ResourcesComponent implements OnInit {
 
             this.iron = data.user_resources.iron;
             this.wood = data.user_resources.wood;
+            this.meat = data.user_resources.meat;
+            this.gold = data.user_resources.gold;
 
           })
         }
