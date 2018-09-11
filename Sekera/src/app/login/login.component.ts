@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {HttpClient} from "@angular/common/http";
 
 import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
@@ -14,23 +14,20 @@ import {Router} from "@angular/router";
 })
 
 export class LoginComponent implements OnInit {
-  username: string;
-  password: string;
+  username: string = '';
+  password: string = '';
 
-  constructor(private Auth: AuthService, private router: Router) {
+
+
+  constructor(private Auth: AuthService, private router: Router, private httpClient: HttpClient) {
   }
 
   ngOnInit() {
   }
 
-  loginUser(event) {
-    event.preventDefault()
-    const target = event.target
-    const username = target.querySelector('#username').value
-    const password = target.querySelector('#password').value
+  loginUser() {
 
-
-    this.Auth.getUserDetails(username, password)
+    this.Auth.getUserDetails(this.username, this.password)
       .subscribe((data) => {
 
         console.log(data['token']); // data['token' je jenom jiný zápas data.token
@@ -46,9 +43,27 @@ export class LoginComponent implements OnInit {
           console.log('Nespravne credetial')
         }
       })
+  }
 
+
+
+  postSignup() {
+    if (this.username != '' && this.password != '')
+      this.httpClient.post(`http://127.0.0.1:5000/auth/signup/`, {
+        "username": this.username,
+        "password": this.password
+      })
+        .subscribe(
+          (data: any) => {
+            console.log(data);
+
+          })
+
+          }
   }
-  }
+
+
+
 
 
 
