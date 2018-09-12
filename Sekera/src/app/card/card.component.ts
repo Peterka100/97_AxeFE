@@ -10,7 +10,6 @@ export class CardComponent implements OnInit {
 
 
   @Input() childResources;
-
   @Input() childwood;
   @Input() childiron;
   @Input() childlevel;

@@ -43,7 +43,6 @@ export class LoggedComponent implements OnInit {
               this.httpClient.get(`http://127.0.0.1:5000/cards/${this.card_id}/${this.card_level}`)
                 .subscribe((rss: any) => {
 
-
                   this.resource = rss.card_details;
                   this.resources.push(this.resource)
 
@@ -53,9 +52,17 @@ export class LoggedComponent implements OnInit {
           })
 
     }
-
-
-
   }
+
+
+  //Po kliku na tlačítko se zavolá táto funkce. je ale potřeba přidat to časování.
+  AddResources(resource){
+    this.httpClient.put('127.0.0.1:5000/users/AddRSStoUser',{
+      "user_id": localStorage.getItem('user_id'),
+      "resource": resource,
+      "value": 10000
+    })
+  }
+
 
 }

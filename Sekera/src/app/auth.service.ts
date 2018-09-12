@@ -12,8 +12,6 @@ interface myData {
 export class AuthService {
 
 
-
-
   private loggedInStatus = JSON.parse(localStorage.getItem('loggedIn') || 'false')
 
   constructor(private httpClient: HttpClient) {}
