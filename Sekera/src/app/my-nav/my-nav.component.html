@@ -1,0 +1,50 @@
+
+
+<mat-sidenav-container >
+
+  <mat-sidenav  mode="side" opened class="col-md-3 col-sm-3 sidenav"  >
+
+
+    <p>
+    R E S O U R C E S
+    </p>
+
+    <p>
+    <button (click)="AddWood()" class="btn col-md-8" ><i class="fa fa-wood"></i>
+      <img src="../../assets/wood_icon.png" style="width: auto; height: 20px" /> Add wood <br> (10 000)
+    </button>
+    </p>
+
+    <p>
+    <button (click)="AddIron()" class="btn col-md-8 " ><i class="fa fa-iron"></i>
+      <img src="../../assets/Stone_icon.png" style="width: auto; height: 20px" /> Add iron <br> (10 000)
+    </button>
+    </p>
+
+    <p>
+    <button (click)="AddMeat()" class="btn col-md-8"  ><i class="fa fa-meat"></i>
+      <img src="../../assets/Meat_icon.jfif" style="width: auto; height: 20px" /> Add meat <br> (10 000)
+    </button>
+    </p>
+
+    <p>
+    <button (click)="AddGold()"  class="btn col-md-8" ><i class="fa fa-gold"></i>
+      <img src="../../assets/gold_icon.png" style="width: auto; height: 20px" /> Add gold <br> (10 000)
+    </button>
+    </p>
+
+
+
+
+  </mat-sidenav>
+
+
+
+  <mat-sidenav-content >
+
+    <app-logged  [material]="resources" ></app-logged>
+
+  </mat-sidenav-content>
+
+
+</mat-sidenav-container>
